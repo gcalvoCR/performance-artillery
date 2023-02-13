@@ -1,0 +1,25 @@
+{
+  "name": "performance-artillery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx artillery run --output reports/test-run-report.json config.yaml",
+    "report": "npx artillery report reports/test-run-report.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcalvoCR/performance-artillery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gcalvoCR/performance-artillery/issues"
+  },
+  "homepage": "https://github.com/gcalvoCR/performance-artillery#readme",
+  "devDependencies": {
+    "artillery": "^2.0.0-30",
+    "artillery-engine-playwright": "^0.2.1"
+  }
+}

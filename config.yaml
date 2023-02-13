@@ -1,0 +1,32 @@
+config:
+  target: https://www.artillery.io
+  phases: # load spec
+    - name: Constant arrival rate
+      duration: 10
+      arrivalRate: 2 # to users every second for 10 seconds
+      maxVusers: 5 # max amount of users
+
+    # - name: Ramp up rate
+    #   duration: 30
+    #   arrivalRate: 2 # it ramps up from 2 to 5 over 30s
+    #   rampTo: 6
+
+    # - name: Fixed number of arrivals per second
+    #   duration: 20
+    #   arrivalCount: 4 # one virtual user every 5 seconds 20/4
+
+    # - name: Pause
+    #   duration: 10 # does nothing for 10s
+    
+  # Enable the Playwright engine:
+  engines:
+    playwright:
+      launchOptions:
+        headless: false
+  processor: "./flows/index.js"
+
+scenarios:
+  - name: "Example by Gabriel Calvo"
+    engine: playwright
+    flowFunction: "artilleryFlow"
+    flow: []
